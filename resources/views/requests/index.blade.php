@@ -47,6 +47,23 @@
                 </div>
             @endforeach
         </div>
+        @if ($claims->hasPages())
+            <div class="pager">
+                @if ($claims->onFirstPage())
+                    <span class="pager__btn is-disabled">← Назад</span>
+                @else
+                    <a class="pager__btn" href="{{ $claims->previousPageUrl() }}">← Назад</a>
+                @endif
+
+                <span class="pager__info">Стр. {{ $claims->currentPage() }} из {{ $claims->lastPage() }}</span>
+
+                @if ($claims->hasMorePages())
+                    <a class="pager__btn" href="{{ $claims->nextPageUrl() }}">Вперёд →</a>
+                @else
+                    <span class="pager__btn is-disabled">Вперёд →</span>
+                @endif
+            </div>
+        @endif
     @endif
 </div>
 
