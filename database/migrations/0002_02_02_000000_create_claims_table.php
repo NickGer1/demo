@@ -13,6 +13,7 @@ return new class extends Migration
             $table->enum('status', ['new', 'approved', 'rejected'])->default('new');
             $table->date('date');
             $table->string('place');
+            $table->string('pay');
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->timestamps();
             $table->index('status');
