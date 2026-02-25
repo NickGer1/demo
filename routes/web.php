@@ -22,7 +22,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
-   Route::get('/requests', [ClaimController::class, 'index'])->name('requests.index');
+   Route::get('/requests', [ClaimAdminController::class, 'index'])->name('requests.index');
    Route::patch('/requests/{claim}/status', [ClaimAdminController::class, 'updateStatus'])->name('requests.status');
 });
 

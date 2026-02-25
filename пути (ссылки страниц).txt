@@ -1,0 +1,10 @@
+/ - главная
+/admin/requests - админка
+/login - вход
+/register - регистрация
+/requests - личный кабинет пользователя
+
+Для запуска проекта локально
+php artisan migrate:fresh
+npm install
+npm run dev

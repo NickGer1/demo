@@ -63,16 +63,16 @@
 
             <div class="claim-card">
                 <div class="claim-top">
-                    <div class="claim-number">{{ $claim->car_number }}</div>
+                    <div class="claim-number">{{ $claim->date }}</div>
                     <span class="status {{ $statusClass }}">{{ $statusText }}</span>
                 </div>
 
                 <div class="claim-sub">
                     #{{ $claim->id }}
                     • {{ $claim->created_at->format('d.m.Y H:i') }}
-                    • Тип: {{ $typeText }}
+                    • Помещение: {{ $claim->place }}
                     • Дата: {{ $dateText }}
-                    • Номер: {{ $claim->car_number }}
+                    • Способ оплаты: {{ $claim->pay }}
                 </div>
 
                 <div class="claim-sub" style="margin-top:4px;">
@@ -81,16 +81,14 @@
                     (логин: {{ $claim->user->login ?? '—' }})
                 </div>
 
-                <div class="claim-desc">{{ $claim->description }}</div>
-
                 <form class="claim-actions" method="POST" action="{{ route('admin.requests.status', $claim) }}">
                     @csrf
                     @method('PATCH')
 
                     <select name="status" class="select-sm" @disabled(!$canChange)>
                         <option value="">— выбрать —</option>
-                        <option value="approved">Подтверждено</option>
-                        <option value="rejected">Отклонено</option>
+                        <option value="approved">Банкет назначен</option>
+                        <option value="rejected">Банкет завершен</option>
                     </select>
 
                     <button class="btn btn-sm" type="submit" @disabled(!$canChange)>

@@ -10,6 +10,46 @@
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
 
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Light.ttf') format('ttf');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Regular.ttf') format('ttf');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Medium.ttf') format('ttf');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-SemiBold.ttf') format('ttf');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../fonts/Oswald-Bold.ttf') format('ttf');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 *,
 *::before,
 *::after {
@@ -19,14 +59,31 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Oswald', sans-serif !important;
     background: #f6f7fb;
+    font-size: 16px;
     margin: 0;
+    color: #000;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+h1 {
+    font-size: 36px;
+    color: #DC143C;
 }
 
 h2 {
     font-weight: 700;
-    font-size: 26px;
+    font-size: 24px;
+    color: #DAA520 !important;
+}
+
+h3 {
+    font-size: 18px;
+    color: #DAA520 !important;
 }
 
 .wrap {
@@ -44,6 +101,12 @@ h2 {
     padding: 12px 20px;
 }
 
+.header__logo {
+    font-weight: 700;
+    font-size: 16px;
+    color: #DC143C;
+}
+
 .header__inner {
     display: flex;
     align-items: center;
@@ -57,9 +120,11 @@ h2 {
 }
 
 .header__btn {
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: underline;
     cursor: pointer;
+    color: #DC143C;
+    font-weight: 500;
 }
 
 .row {
@@ -236,7 +301,7 @@ select:focus {
 .back {
     margin-top: 12px;
     font-size: 14px;
-    color: #2f6fed;
+    color: #006400;
     text-decoration: underline;
     transition: .3s color;
     display: inline-block;
@@ -443,4 +508,37 @@ select:disabled {
 
 .btn-gray:hover {
     opacity: .9;
+}
+
+.slick-list {
+    overflow: hidden;
+}
+
+.slick-track {
+    display: flex;
+}
+
+.slider {
+    position: relative;
+}
+.slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1000;
+    background: #FFFDD0;
+    padding: 5px;
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    color: #000;
+}
+
+.slick-prev {
+    left: 0;
+}
+
+.slick-next {
+    right: 0;
 }

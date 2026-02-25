@@ -11,5 +11,21 @@
 <body>
 @include('components.header')
 
+<div class="wrap">
+    <div class="slider">
+        <div class="slider__item">
+            <img src="{{ asset('img/1.jpg') }}" alt="img" class="slider__img">
+        </div>
+        <div class="slider__item">
+            <img src="{{ asset('img/2.jpg') }}" alt="img" class="slider__img">
+        </div>
+        <div class="slider__item">
+            <img src="{{ asset('img/3.jpg') }}" alt="img" class="slider__img">
+        </div>
+        <div class="slider__item">
+            <img src="{{ asset('img/4.jpeg') }}" alt="img" class="slider__img">
+        </div>
+    </div>
+</div>
 </body>
 </html>
